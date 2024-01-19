@@ -361,3 +361,10 @@ header ul li .menu{
   margin-left: 50px;
   color: crimson;
 }
+
+.InCart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

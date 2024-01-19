@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "./Context";
 import formatCurrency from "../utils";
@@ -6,7 +6,7 @@ import formatCurrency from "../utils";
 function Products() {
   const value = useContext(DataContext);
   const [products, setProducts] = value.products;
-  const addCart = value.addCart
+  const addCart = value.addCart;
 
   return (
     <div className="products">
@@ -21,7 +21,7 @@ function Products() {
             </h3>
             <p>{product.description}</p>
             <h4>{formatCurrency(product.price)}</h4>
-            <button onClick={() =>addCart(product._id)}>افزودن به سبد خرید</button>
+            <button onClick={() => addCart(product._id)}>افزودن به سبد خرید</button>
           </div>
         </div>
       ))}
