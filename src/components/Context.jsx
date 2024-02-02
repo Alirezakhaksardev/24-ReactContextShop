@@ -8,19 +8,6 @@ export const DataProvider = (props) => {
 
   const [cart, setCart] = useState([]);
 
-
-  // const existProductInCart = (Product_id) => {
-  //   const check = cart.every((item) => {
-  //     item._id == Product_id;
-  //   });
-  //   if(check){
-  //     return true
-  //   }else{
-  //     return false
-  //   }
-  // }
-
-
   const addCart = async (Product_id) => {
     const check = cart.every((item) => {
       return item._id !== Product_id;
@@ -63,7 +50,7 @@ export const DataProvider = (props) => {
 
   useEffect(() => {
     const dataCart = JSON.parse(localStorage.getItem("dataCart"));
-    if (dataCart.length > 0) setCart(dataCart);
+    if (dataCart && dataCart.length > 0) setCart(dataCart);
   }, []);
 
   useEffect(() => {

@@ -38,8 +38,10 @@ function Details() {
             <h2>{product.title}</h2>
             <h3>{product.price}</h3>
             <div className="colors">
-              {product &&
-                product.colors.map((color, index) => <button key={index} style={{ background: color }}></button>)}
+              {product ?
+                product.colors.map((color, index) => <button key={index} style={{ background: color }}></button> )
+                : null
+              }
             </div>
             <p>{product.description}</p>
             <p>{product.content}</p>
